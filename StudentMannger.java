@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+﻿import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentMannger {
@@ -6,29 +6,8 @@ public class StudentMannger {
     public void addStudent(Student s){
         list.add(s);
     }
-    public void deleteStudent(String name){
-        for(Student s:list) {
-            if (s.getName().equals(name)) {
-                list.remove(name);
-                System.out.println("删除成功");
-            }
-            else
-                System.out.println("未找到");
-        }
-
-    }
-    public void updateStudent(Student olds,Student news){
-        list.remove(olds);
-        list.add(news);
-    }
-    public void outPutAll(){
-        for(Student s:list)
-            System.out.println(s.toString());
-    }
-    public boolean exit(){
-        list.clear();
-        return true;
-    }
+   
+   
     public Student query(String name){
         for(Student s:list)
             if (s.getName().equals(name)) {
