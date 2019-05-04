@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentMannger {
-    public static ArrayList<Student> list=new ArrayList<>(); //声明list集合来存储student类
+    public static ArrayList<Student> list=new ArrayList<>(); //来声明list集合来存储student类
     public void addStudent(Student s){//在list集合中增加student
         list.add(s);  
     }
