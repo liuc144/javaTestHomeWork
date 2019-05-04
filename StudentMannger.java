@@ -1,3 +1,5 @@
+﻿package stu;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,7 +19,7 @@ public class StudentMannger {
         }
 
     }
-    public void updateStudent(Student olds,Student news){
+    public void updateStudent(Student olds,Student news){//修改student类
         list.remove(olds);
         list.add(news);
     }
@@ -25,14 +27,15 @@ public class StudentMannger {
         for(Student s:list)
             System.out.println(s.toString());
     }
-    public boolean exit(){
+    public boolean exit(){//退出程序
         list.clear();
         return true;
     }
-    public Student query(String name){
+    public Student query(String name){//根据姓名查询某个学生
+	
         for(Student s:list)
             if (s.getName().equals(name)) {
-                return s;
+                return new Student(s.getID(),s.getName(),s.getBirDate(),s.isGender());//错误修改
             }
         System.out.println("未找到");
         return null;
@@ -110,3 +113,4 @@ public class StudentMannger {
         }
     }
 }
+
