@@ -1,23 +1,26 @@
+﻿package stu;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentMannger {
-    public static ArrayList<Student> list=new ArrayList<>();
-    public void addStudent(Student s){
-        list.add(s);
+    public static ArrayList<Student> list=new ArrayList<>(); //来声明list集合来存储student类
+    public void addStudent(Student s){//在list集合中增加student
+        list.add(s);  
     }
-    public void deleteStudent(String name){
+    public void deleteStudent(String name){ //在list集合中根据姓名来删除student
         for(Student s:list) {
-            if (s.getName().equals(name)) {
+            if (s.getName().equals(name)) {//判断分支，如果匹配姓名，就删除姓名和相关信息
                 list.remove(name);
-                System.out.println("删除成功");
+                System.out.println("删除成功"); //如果没有匹配姓名，输出删除成功提示信息
             }
             else
-                System.out.println("未找到");
+            {
+            	System.out.println("未找到");//输出未找到提示信息
+            }      
         }
-
     }
-    public void updateStudent(Student olds,Student news){
+    public void updateStudent(Student olds,Student news){//修改student类
         list.remove(olds);
         list.add(news);
     }
@@ -25,14 +28,15 @@ public class StudentMannger {
         for(Student s:list)
             System.out.println(s.toString());
     }
-    public boolean exit(){
+    public boolean exit(){//退出程序
         list.clear();
         return true;
     }
-    public Student query(String name){
+    public Student query(String name){//根据姓名查询某个学生
+	
         for(Student s:list)
             if (s.getName().equals(name)) {
-                return s;
+                return new Student(s.getID(),s.getName(),s.getBirDate(),s.isGender());//错误修改
             }
         System.out.println("未找到");
         return null;
@@ -110,3 +114,4 @@ public class StudentMannger {
         }
     }
 }
+
